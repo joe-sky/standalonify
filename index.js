@@ -28,19 +28,30 @@ module.exports = function (b, opts) {
     throw new Error('Please specifiy a name for the module');
   }
 
-  var deps = opts.deps || {},
-      keys = Object.keys(deps);
+  var deps = opts.deps,
+    keys = [];
+  if (deps) {
+    keys = Object.keys(deps);
+  }
+  else {
+    prefix = "(function(_g) {(function(f) {if (typeof exports === 'object' && typeof module !== 'undefined') { module.exports = f() } else if (typeof define === 'function' && define.amd) { define([], f.bind(_g)) } else { f() } })(function(define, module,exports) { var _m = ";
+  }
 
   function applyPlugin() {
     return b.external(keys)
         .pipeline.get('wrap')
         .push(createStream(function () {
-          return prefix.format({
-            depsKeys: JSON.stringify(keys),
-            depsMap: '{' + keys.map(function (key) {
-              return JSON.stringify(key) + ":" + deps[key];
-            }).join(',') + '}'
-          });
+          if (deps) {
+            return prefix.format({
+              depsKeys: JSON.stringify(keys),
+              depsMap: '{' + keys.map(function (key) {
+                return JSON.stringify(key) + ":" + deps[key];
+              }).join(',') + '}'
+            });
+          }
+          else {
+            return prefix;
+          }
         }, function () {
           return suffix.format({
             // This is pretty hacky but Browserify has the standalone mode internalized

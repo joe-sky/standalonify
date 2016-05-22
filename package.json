@@ -1,6 +1,6 @@
 {
   "name": "standalonify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A Browserify plugin to make standalone UMD bundles.",
   "main": "index.js",
   "files": [
