@@ -1,0 +1,27 @@
+{
+  "name": "standalonify",
+  "version": "0.1.0",
+  "description": "A Browserify plugin to make standalone UMD bundles.",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "LICENSE"
+  ],
+  "homepage": "https://github.com/joe-sky/standalonify",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joe-sky/standalonify"
+  },
+  "keywords": [
+    "browserify",
+    "browserify-plugin",
+    "amd",
+    "umd"
+  ],
+  "author": "Joe_Sky(hitomi_doax@sina.com)",
+  "license": "MIT",
+  "dependencies": {
+    "string-format-js": "^0.1.5",
+    "through2": "^2.0.0"
+  }
+}
