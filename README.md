@@ -1,5 +1,5 @@
 # standalonify
-A Browserify plugin to make standalone UMD bundles.
+A Browserify plugin to make standalone UMD bundles
 
 ## Installation
 npm install -save standalonify
