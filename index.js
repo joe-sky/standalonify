@@ -43,7 +43,7 @@ module.exports = function (b, opts) {
         .push(createStream(function () {
           if (deps) {
             return prefix.format({
-              depsKeys: JSON.stringify(keys),
+              depsKeys: opts.hasAmdDeps === false ? '[]' : JSON.stringify(keys),
               depsMap: '{' + keys.map(function (key) {
                 return JSON.stringify(key) + ":" + deps[key];
               }).join(',') + '}'
