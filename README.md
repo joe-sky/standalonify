@@ -16,6 +16,11 @@ browserify({
   deps: {
     'react': 'React',  // require('react') will use AMD's and CommonJS's require('react') or the React global object.
     'react-dom': 'ReactDOM'
-  }
+  },
+  hasAmdDeps: true  //If set to false will not generate amd dependency.
 });
 ```
+
+### License
+
+MIT
