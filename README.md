@@ -1,6 +1,5 @@
 # standalonify
-A Browserify plugin to make standalone UMD bundles.
-This is a fork of [dependify](https://github.com/rturnq/dependify).
+A Browserify plugin to make standalone UMD bundles. This is a fork of [dependify](https://github.com/rturnq/dependify).
 
 ## Installation
 npm install -save standalonify
